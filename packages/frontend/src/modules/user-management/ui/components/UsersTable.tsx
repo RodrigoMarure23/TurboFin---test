@@ -2,7 +2,7 @@
 import type { User } from "../../../../context/AuthContext";
 import { Info } from "lucide-react";
 import Swal from "sweetalert2";
-import { useAuth } from "../../../../context/useAuth"; // ajusta la ruta si es necesario
+import { useAuth } from "../../../../context/useAuth"; 
 
 interface UsersTableProps {
   users: User[];
