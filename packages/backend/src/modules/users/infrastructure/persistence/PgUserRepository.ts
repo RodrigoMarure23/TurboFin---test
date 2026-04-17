@@ -4,7 +4,7 @@ import { UserRepository } from "@/modules/users/domain/UserRepository.js";
 export interface CollaboratorStats {
   username: string;
   avatarUrl: string | null;
-  interactions: string; // Cambiado a string para evitar problemas de tipo con COUNT
+  interactions: number; // Cambiado a string para evitar problemas de tipo con COUNT
 }
 interface Row {
   username: string;
@@ -16,7 +16,6 @@ interface Row {
   created_at: Date;
   status: "active" | "inactive" | undefined;
   id: string;
-  
 }
 export class PgUserRepository implements UserRepository {
   async save(user: User): Promise<void> {

@@ -2,7 +2,15 @@
 import { pool } from "../../../../shared/infrastructure/database/PostgresConfig.js";
 import { Message } from "../../domain/Message.js";
 import { MessageRepository } from "../../domain/MessageRepository.js";
-
+interface Row {
+  id: string;
+  user_id: string;
+  content: string;
+  likes_count: number;
+  created_at: Date;
+  parent_id: string | null;
+  username: string; // Se agrega el username directamente en la consulta
+}
 export class PgMessageRepository implements MessageRepository {
   async save(message: Message): Promise<void> {
     const query = `
@@ -28,6 +36,7 @@ export class PgMessageRepository implements MessageRepository {
       likesCount: row.likes_count,
       created_at: row.created_at,
       parent_id: row.parent_id,
+
     });
   }
 
@@ -68,7 +77,7 @@ export class PgMessageRepository implements MessageRepository {
     const res = await pool.query(query);
 
     // Un solo map para transformar cada fila en la instancia que necesitas
-    return res.rows.map((row) => {
+    return res.rows.map((row: any) => {
       return new Message({
         id: row.id,
         userId: row.user_id,

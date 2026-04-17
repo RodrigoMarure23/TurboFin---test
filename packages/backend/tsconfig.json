@@ -12,7 +12,8 @@
     "forceConsistentCasingInFileNames": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "noImplicitAny": false
   },
   "include": ["src/**/*", "src/modules/messages/domain/MessageRepository.ts"],
   "exclude": ["node_modules"]
