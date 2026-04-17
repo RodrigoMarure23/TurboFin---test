@@ -5,6 +5,8 @@ export interface AuthRequest extends Request {
   userId?: string;
   email?: string;
   role?: string;
+  username?: string; // Agregado para almacenar el nombre de usuario, si es necesario
+  
 }
 
 export const authMiddleware = (

@@ -4,7 +4,19 @@ import { UserRepository } from "@/modules/users/domain/UserRepository.js";
 export interface CollaboratorStats {
   username: string;
   avatarUrl: string | null;
-  interactions: number;
+  interactions: string; // Cambiado a string para evitar problemas de tipo con COUNT
+}
+interface Row {
+  username: string;
+  avatar_url: string | null;
+  interactions: string;
+  email: string;
+  password_hash: string;
+  role: "user" | "admin" | undefined;
+  created_at: Date;
+  status: "active" | "inactive" | undefined;
+  id: string;
+  
 }
 export class PgUserRepository implements UserRepository {
   async save(user: User): Promise<void> {
@@ -61,7 +73,7 @@ export class PgUserRepository implements UserRepository {
     const res = await pool.query(query);
 
     return res.rows.map(
-      (row) =>
+      (row: Row) =>
         new User({
           id: row.id,
           username: row.username,
@@ -96,7 +108,7 @@ export class PgUserRepository implements UserRepository {
   `;
     const res = await pool.query(query, [limit]);
 
-    return res.rows.map((row) => ({
+    return res.rows.map((row: Row) => ({
       username: row.username,
       avatarUrl: row.avatar_url,
       interactions: parseInt(row.interactions, 10),
