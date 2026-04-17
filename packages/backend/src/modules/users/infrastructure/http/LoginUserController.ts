@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { LoginUser } from "../../application/LoginUser.js";
-import { PgUserRepository } from "@/modules/users/infrastructure/persistence/PgUserRepository.js";
+import { PgUserRepository } from "../persistence/PgUserRepository.js";
 import { z } from "zod";
 
 const LoginSchema = z.object({

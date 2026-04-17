@@ -1,4 +1,4 @@
-import { Message } from "@/modules/messages/domain/Message.js";
+import { Message } from "../domain/Message.js";
 
 export interface MessageRepository {
   save(message: Message): Promise<void>; // Unificamos postMessage/postReply en save

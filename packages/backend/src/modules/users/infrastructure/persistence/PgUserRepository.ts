@@ -1,6 +1,6 @@
 import { pool } from "../../../../shared/infrastructure/database/PostgresConfig.js";
-import { User } from "@/modules/users/domain/User.js";
-import { UserRepository } from "@/modules/users/domain/UserRepository.js";
+import { User } from "../../domain/User.js";
+import { UserRepository } from "../../domain/UserRepository.js";
 export interface CollaboratorStats {
   username: string;
   avatarUrl: string | null;

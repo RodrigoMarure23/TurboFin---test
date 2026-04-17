@@ -4,17 +4,14 @@
     "module": "Node16",
     "moduleResolution": "Node16",
     "lib": ["ES2020"],
-    "outDir": "./dist",
+    "outDir": "dist",
     "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    },
     "noImplicitAny": false
   },
-  "include": ["src/**/*", "src/modules/messages/domain/MessageRepository.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

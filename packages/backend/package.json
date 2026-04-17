@@ -4,9 +4,9 @@
   "type": "module",
   "main": "dist/shared/infrastructure/http/server.js",
   "scripts": {
-    "dev": "nodemon",
     "build": "tsc",
-    "start": "node dist/shared/infrastructure/http/server.js"
+    "start": "node dist/shared/infrastructure/http/server.js",
+    "dev": "nodemon"
   },
   "keywords": [],
   "author": "Rodrigo Marure Sanchez",

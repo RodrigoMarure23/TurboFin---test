@@ -3,7 +3,7 @@ import { Response } from "express";
 import { AuthRequest } from "../../../../shared/infrastructure/http/AuthMiddleware.js";
 import { CreateMessage } from "../../application/CreateMessage.js";
 import { PgMessageRepository } from "../persistence/PgMessageRepository.js";
-import { io } from "@/shared/infrastructure/realtime/SocketConfig.js";
+import { io } from "../../../../shared/infrastructure/realtime/SocketConfig.js";
 
 export class PostReplyController {
   async run(req: AuthRequest, res: Response) {

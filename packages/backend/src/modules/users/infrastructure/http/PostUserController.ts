@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { RegisterUser } from "../../application/RegisterUser.js";
-import { PgUserRepository } from "@/modules/users/infrastructure/persistence/PgUserRepository.js";
+import { PgUserRepository } from "../persistence/PgUserRepository.js";
 import { z } from "zod";
 
 // Esquema de validación para la entrada de datos

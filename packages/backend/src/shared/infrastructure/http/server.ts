@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { pool } from "../database/PostgresConfig.js";
 import { userRouter } from "../../../modules/users/infrastructure/http/UserRoutes.js";
-import { messageRouter } from "@/modules/messages/infrastructure/http/MessagesRoutes.js";
+import { messageRouter } from "../../../modules/messages/infrastructure/http/MessagesRoutes.js";
 import { createServer } from "http";
 import { initSocket } from "../realtime/SocketConfig.js";
 // Cargar variables de entorno
